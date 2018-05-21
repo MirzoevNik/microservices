@@ -1,2 +1,3 @@
 rootProject.name = 'parent'
 
+include 'data-input'
