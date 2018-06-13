@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Application</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="w3-container">
+        <br>
+
+        <div class="w3-container w3-teal">
+            <h2>Введите данные о кредите</h2>
+        </div>
+
+        <form action="#" th:action="@{|/data-input/app/${piid}|}" th:object="${app}" method="post">
+            <p><label class="w3-text-teal">Сумма кредита</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{amount}"/></p>
+            <p><label class="w3-text-teal">Дата заведения</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{startDate}" disabled/></p>
+            <p><label class="w3-text-teal">Процентная ставка</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{rate}"/></p>
+            <p><label class="w3-text-teal">Срок кредита (мес.)</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{term}"/></p>
+            <p><label class="w3-text-teal">Название кредитного продукта</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{productName}"/></p>
+            <p><label class="w3-text-teal">Исполнитель</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{executor}"/></p>
+
+            <div class="w3-container w3-blue">
+                <h4>Введите данные о клиенте</h4>
+            </div>
+            <p><label class="w3-text-teal">Имя</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{client.name}"/></p>
+            <p><label class="w3-text-teal">Фамилия</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{client.surname}"/></p>
+            <p><label class="w3-text-teal">Отчество</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{client.patronymic}"/></p>
+            <p><label class="w3-text-teal">Дата рождения</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{client.birthday}"/></p>
+            <p><label class="w3-text-teal">ИНН</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{client.inn}"/></p>
+            <p><label class="w3-text-teal">СНИЛС</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{client.snils}"/></p>
+            <p><label class="w3-text-teal">Адрес</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{client.address}"/></p>
+            <p><label class="w3-text-teal">Общий доход</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{client.income}"/></p>
+            <p><label class="w3-text-teal">Семейное положение</label>
+                <input class="w3-input w3-border w3-light-grey" type="text" th:field="*{client.familyStatus}"/></p>
+
+            <p><button type="submit" class="w3-button w3-brown">Продолжить</button></p>
+        </form>
+
+    </div>
+</body>
+</html>

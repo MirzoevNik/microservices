@@ -1,0 +1,20 @@
+server:
+  port: 9090
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+zuul:
+  add-host-header: true
+  routes:
+    bpm:
+      path: /bpm/**
+      serviceId: bpm
+    data-input:
+      path: /data-input/**
+      serviceId: data-input
+    make-decison:
+      path: /make-decison/**
+      serviceId: make-decison

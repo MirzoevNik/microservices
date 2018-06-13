@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="w3-container">
+        <br>
+
+        <table border="1" class="w3-table-all">
+            <tr class="w3-blue">
+                <th>Идентификатор заявки</th>
+                <th>Клиент</th>
+                <th>Сумма</th>
+                <th>Статус</th>
+            </tr>
+            <tr th:each="app : ${apps}">
+                <td th:text="${app.id}"/>
+                <td th:text="${app.client.surname} + ' ' + ${app.client.name} + ' ' + ${app.client.patronymic}"/>
+                <td th:text="${app.amount}"/>
+                <td th:text="${app.status}"/>
+            </tr>
+        </table>
+
+        <br/>
+
+        <form action="#" th:action="@{/data-input/app/start}" method="get">
+            <button type="submit" class="w3-button w3-red">Создать заявку</button>
+        </form>
+
+    </div>
+</body>
+</html>

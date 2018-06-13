@@ -1,19 +1,26 @@
 package ru.neoflex.nfo.microservices.data.input.model
 
-import org.springframework.data.annotation.Id
-import org.springframework.data.mongodb.core.mapping.Document
-import java.util.*
+import javax.persistence.*
 
 /**
  * @author mirzoevnik
  */
-@Document
+@Entity
+@Table
 data class Client (
         @Id
-        val id: String,
-        val name: String,
-        val surname: String,
-        val patronymic: String,
-        val birthday: Date,
-        val inn: String
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        var id: Long? = null,
+
+        var name: String? = null,
+        var surname: String? = null,
+        var patronymic: String? = null,
+        var birthday: String? = null,
+        var inn: String? = null,
+        var snils: String? = null,
+        var address: String? = null,
+        var income: Double? = null,
+
+        @Column(name = "FAMILY_STATUS")
+        var familyStatus: String? = null
 )

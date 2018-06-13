@@ -1,9 +1,11 @@
 package ru.neoflex.nfo.microservices.data.input.repository
 
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
 import ru.neoflex.nfo.microservices.data.input.model.Client
 
 /**
  * @author mirzoevnik
  */
-interface ClientRepository: ReactiveMongoRepository<Client, String>
+@Repository
+interface ClientRepository: JpaRepository<Client, Long>
